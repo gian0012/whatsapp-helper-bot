@@ -1,7 +1,7 @@
 const qrcode = require('qrcode-terminal');
 const {performance} = require('perf_hooks');
 const {Client, LocalAuth, MessageMedia, Buttons} = require('whatsapp-web.js');
-var fs = require('fs');
+const fs = require('fs');
 const process = require('process');
 
 const footer = 'Developed By Γιάν';
@@ -250,9 +250,9 @@ client.on("message", async (message) => {
                 }
 
                 if (message.body === "!ping") {
-                    var startPing = performance.now();
+                    let startPing = performance.now();
                     let mex = await message.reply('Pong.');
-                    var endPing = performance.now();
+                    let endPing = performance.now();
 
 
                     await mex.delete(1);
@@ -280,7 +280,7 @@ client.on("message", async (message) => {
                 }
 
                 const isValidUrl = urlString => {
-                    var urlPattern = new RegExp('^(https?:\\/\\/)?' + // validate protocol
+                    let urlPattern = new RegExp('^(https?:\\/\\/)?' + // validate protocol
                         '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // validate domain name
                         '((\\d{1,3}\\.){3}\\d{1,3}))' + // validate OR ip (v4) address
                         '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // validate port and path
